@@ -1,12 +1,17 @@
 (function(){
 "use strict";
 
-var secondToRemoveAlert = 120;
+var secondToRemoveAlert = 1000;
 
 app.controller('PrmSearchbarAfterController', ['$location', '$mdDialog', '$timeout', '$mdToast', function ($location, $mdDialog, $timeout, $mdToast) {
     var vm = this;
 
-    var templateString = '<div layout="row" layout-align="center center" style="width: 100%" class="bar alert-bar layout-align-center-center layout-row">' + '<span class="md-toast-text">' + '<span>Login to iDiscover with Raven is not currently available. Please log in with the <em>Other users of the library</em> option and use your library barcode and surname</span>' + '</span>' + '<md-divider class="md-primoExplore-theme"></md-divider>' + '<button class="md-button md-primoExplore-theme md-ink-ripple" type="button" ng-click="ctrl.onDismiss()" aria-label="DISMISS">' + '<span class="ng-scope" translate="nui.message.dismiss">DISMISS</span>' + '</button>' + '</div>';
+    var notice = '<span translate="nui.idiscovernotice"></span>';
+    var templateString = '<div layout="row" layout-align="center center" style="width: 100%" class="bar alert-bar layout-align-center-center layout-row">' + '<span class="md-toast-text">' + notice + '</span>' + '<md-divider class="md-primoExplore-theme"></md-divider>' + '<button class="md-button md-primoExplore-theme md-ink-ripple" type="button" ng-click="ctrl.onDismiss()" aria-label="DISMISS">' + '<span class="ng-scope" translate="nui.message.dismiss">DISMISS</span>' + '</button>' + '</div>';
+
+    console.log('notice');
+    console.log(notice);
+    console.log(angular.element($("translate[value='nui.idiscovernotice']")));
 
     $mdToast.show({
         controllerAs: 'ctrl',
