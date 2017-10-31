@@ -18,7 +18,7 @@ app.controller('prmLogoAfterController', ['$location', '$mdDialog', '$timeout', 
     
     $translate('nui.idiscovernotice').then((translation) => {
         vm.translation = translation;
-        if (vm.translation !== 'idiscoversnotice' && vm.translation.trim() !== "") {
+        if (vm.translation !== 'idiscovernotice' && vm.translation.trim() !== "") {
             $mdToast.show({
                 controllerAs: 'ctrl',
                 controller: function controller() {
