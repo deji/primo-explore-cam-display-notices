@@ -3,7 +3,7 @@
 
 var secondToRemoveAlert = 3000;
 
-app.controller('PrmSearchbarAfterController', ['$location', '$mdDialog', '$timeout', '$mdToast', '$translate', 
+app.controller('prmLogoAfterController', ['$location', '$mdDialog', '$timeout', '$mdToast', '$translate', 
         function ($location, $mdDialog, $timeout, $mdToast, $translate) {
     var vm = this;
 
@@ -14,7 +14,7 @@ app.controller('PrmSearchbarAfterController', ['$location', '$mdDialog', '$timeo
             + '<button class="md-button md-primoExplore-theme md-ink-ripple" type="button" ng-click="ctrl.onDismiss()" aria-label="DISMISS">' 
             + '<span class="ng-scope" translate="nui.message.dismiss">DISMISS</span>' + '</button>' + '</div>';
 
-    console.log('notice');
+    console.log('notices');
     
     $translate('nui.idiscovernotice').then((translation) => {
         vm.translation = translation;
@@ -53,9 +53,9 @@ app.controller('PrmSearchbarAfterController', ['$location', '$mdDialog', '$timeo
 
 }]);
 
-app.component('prmSearchBarAfter', {
+app.component('prmLogoAfter', {
     bindings: { parentCtrl: '<' },
-    controller: 'PrmSearchbarAfterController',
+    controller: 'prmLogoAfterController',
     template: '<div ></div>'
 });
 })();
