@@ -40,6 +40,9 @@ app.controller('prmLogoAfterController', ['$location', '$mdDialog', '$timeout', 
                 template: templateString
             });
 
+            // added this bit to remove the relative position added to the style of the 
+            // primo-explore root element. This prevents the idiscover login window from
+            // appearing.
             setTimeout(function(){ 
                 angular.element(document.querySelector("primo-explore")).css('position', '');
             }, 1000);
