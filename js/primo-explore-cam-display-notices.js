@@ -32,15 +32,13 @@ app.controller('PrmSearchbarAfterController', ['$location', '$mdDialog', '$timeo
         hideDelay: secondToRemoveAlert * 1000,
         position: 'top right',
         template: templateString
-    }).then(function () {
-        vm.onToastClose();
     });
 
-    //Following code fixes a bug with mdToast who places "position: relative" on root element but doesn't remove it once it is closed.
-    //This causes md-dialog to not display correctly.
-    vm.onToastClose = function () {
+    //Remove the "position: relative" on the style attribute which is preventing idiscover login
+    //from appearing.
+    setTimeout(function(){ 
         angular.element(document.querySelector("primo-explore")).css('position', '');
-    };
+    }, 1000);
 
 }]);
 
